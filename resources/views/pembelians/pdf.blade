@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laravel 10 Generate PDF Example - ItSolutionStuff.com</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1>{{ $title }}</h1>
+    <p>{{ $date }}</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+  
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Id Pembayaran</th>
+            <th>Id Petugas</th>
+            <th>Nisn</th>
+            <th>Tanggal Dibayar</th>
+            <th>Bulan Dibayar</th>
+            <th>Tahun Dibayar</th>
+            <th>Id Spp</th>
+            <th>Jumlah Bayar</th>
+        </tr>
+        @foreach($pembayarans as $pembayaran)
+        <tr>
+            <td>{{ $pembayaran->id }}</td>
+            <td>{{ $pembayaran->id_pembayaran }}</td>
+            <td>{{ $pembayaran->id_petugas}}</td>
+            <td>{{ $pembayaran->nisn}}</td>
+            <td>{{ $pembayaran->tgl_dibayar}}</td>
+            <td>{{ $pembayaran->bln_dibayar }}</td>
+            <td>{{ $pembayaran->thn_dibayar}}</td>
+            <td>{{ $pembayaran->id_spp }}</td>
+            <td>{{ $pembayaran->jumlah_bayar}}</td>
+        </tr>
+        @endforeach
+    </table>
+  
+</body>
+</html>
